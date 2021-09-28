@@ -1,6 +1,9 @@
 #!/bin/bash
 
+#apps path
 root_path="/home/apps/"
+
+#apps to update
 apps=("app1" "app2" "app3")
 
 
@@ -18,7 +21,9 @@ do
 		echo $local_commit
 		origin_commit=$(git log origin/$branch | head -1)
 		echo $origin_commit
+		#comparing local commit hash with origin commit hash
 		if [[ $local_commit != $origin_commit ]]; then
+			echo "updating.."
 			#command to update you app
             		git pull					
 		else
