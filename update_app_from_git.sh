@@ -19,10 +19,10 @@ do
 		origin_commit=$(git log origin/$branch | head -1)
 		echo $origin_commit
 		if [[ $local_commit != $origin_commit ]]; then
-						#command to update you app
-            git pull					
+			#command to update you app
+            		git pull					
 		else
-				echo "already udpated"
+			echo "already udpated"
 		fi
 	done
   
