@@ -3,7 +3,8 @@
 #apps path
 root_path="/home/apps/"
 
-#apps to update
+#apps (folders) to update
+#full path will be created using $root_path + apps[i]
 apps=("app1" "app2" "app3")
 
 
@@ -32,7 +33,7 @@ do
 		if [[ $local_commit != $origin_commit ]]; then
 			echo "$(date '+%Y-%m-%d %H:%M:%S') - updating app $path_app"
 			#command to update you app here
-      git pull					
+ 			git pull					
 		else
 			echo "$(date '+%Y-%m-%d %H:%M:%S') - app $path_app is up to date"
 		fi
@@ -40,6 +41,6 @@ do
   
 	echo "$(date '+%Y-%m-%d %H:%M:%S') - sleeping..."
 	#wait 1 minute before run again
-  sleep 60s
+  	sleep 60s
 
 done 
